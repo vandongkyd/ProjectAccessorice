@@ -1,0 +1,43 @@
+.table-data {
+    width: 100%;
+    font-size: 11px;
+}
+
+.table-data thead tr th {
+    background-color: #B6B6B6;
+    color: #525252;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.table-data td {
+    color: #B3B3B3;
+}
+.table-data td,
+.table-data th {
+    border-right: 1px solid #fff;
+    text-align: center;
+}
+.table-data > tbody > tr:nth-child(2n) {
+    background: #F2F2F2;
+}
+td .action-btn,
+td .export-btn {
+    font-size: 11px;
+    border-radius: 10px;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.pagination>.active>a, 
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover, 
+.pagination>.active>span, 
+.pagination>.active>span:focus, 
+.pagination>.active>span:hover {
+    background-color: #1d36da;
+    border-color: #1d36da;
+}

@@ -1,0 +1,10 @@
+.logo_project{
+    width: 250px;
+    height: 100px;
+}
+.custom_banner{
+    min-width: 100%;
+    height: 640px;
+    position: absolute;
+    z-index: -1
+}
