@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "834547049714",
+    "firebase_url": "https://drinkshop-13770.firebaseio.com",
+    "project_id": "drinkshop-13770",
+    "storage_bucket": "drinkshop-13770.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834547049714:android:d510c89eb2866b39",
+        "android_client_info": {
+          "package_name": "com.example.vantran.drinkshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "834547049714-ntkuagfq8hh1813rvoof418edgp454ph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkC9sWmk_mhP92FcM-kUYTqbR1lHJXlWU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/ed_comment"
+        android:hint="Comment"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rdo_user_address"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:text="User Address"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/rdo_order_address"
+            android:layout_width="wrap_content"
+            android:text="Order Address"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/ed_order_address"
+        android:hint="Order Address"
+        android:enabled="false"
+        android:layout_height="wrap_content" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rdo_payment_1"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:text="Payment In place"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/rdo_payment_2"
+            android:layout_width="wrap_content"
+            android:text="Payment Paypal"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+</LinearLayout>

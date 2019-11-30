@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Shop Accessories</string>
+
+    <string name="FACEBOOK_APP_ID">954952104688856</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">ccdf222d3aa190a16a4ffc455378e957</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="plase_order">Plase Order</string>
+    <string name="title_activity_nearby_store">Map</string>
+
+</resources>

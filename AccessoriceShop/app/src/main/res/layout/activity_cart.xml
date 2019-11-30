@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/rootLayout"
+    android:background="#ffffff"
+    android:layout_height="match_parent"
+    tools:context="com.example.vantran.drinkshop.CartActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar1"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryDark"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Shop Accessories"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.ButtonBarLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/btn_back"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center|left"
+            android:background="@drawable/ic_keyboard_backspace"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:id="@+id/btn_place_order"
+        android:text="@string/plase_order"
+        android:textColor="@color/white"
+        android:enabled="false"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content" />
+    <android.support.v7.widget.RecyclerView
+        android:layout_margin="8dp"
+        android:layout_below="@id/toolbar1"
+        android:layout_width="match_parent"
+        android:id="@+id/rv_cart"
+        android:layout_above="@id/btn_place_order"
+        android:layout_height="match_parent"/>
+</RelativeLayout>
