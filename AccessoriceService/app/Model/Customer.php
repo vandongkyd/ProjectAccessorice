@@ -12,6 +12,12 @@ use Illuminate\Notifications\Notifiable;
  * @property string user_name
  * @property string password
  * @property int created
+ * @property string first_name
+ * @property string last_name
+ * @property string language
+ * @property string address
+ * @property int gender
+ * @property int status
  */
 class Customer extends Authenticatable
 {

@@ -236,6 +236,23 @@ return [
         'date_create' => 'Date Create'
     ],
 
+    'lbl_table_customer' =>[
+        'avatar' => 'Avatar',
+        'full_name' => 'Full Name',
+        'first_name' => 'First Name',
+        'last_name' => 'Last Name',
+        'user_name' => 'User Name',
+        'email' => 'Email',
+        'shop_name' => 'Shop Name',
+        'phone' => 'Phone',
+        'language' => 'Language',
+        'address' => 'Address',
+        'role' => 'Role',
+        'status' => 'Status',
+        'gender' => 'Gender',
+        'date_create' => 'Date Create'
+    ],
+
     'lbl_table_invoice' => [
         'no' => 'Invoice No',
         'purchase_date' => 'Purchase Date',

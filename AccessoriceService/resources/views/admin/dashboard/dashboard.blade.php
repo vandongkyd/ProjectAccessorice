@@ -92,7 +92,7 @@
 
                 <!-- Content -->
                 <div class="content">
-                    <h2>3,000,000.00</h2>
+                    <h2>{{number_format($totalReport['subtotal'])}}</h2>
                 </div>
 
             </div>
@@ -110,20 +110,28 @@
                 <div class="box-body">
                     <div class="chart-legends-1 row">
                         <div class="chart-legend-1 col-12 col-sm-4">
-                            <h5 class="title">Total Sale</h5>
-                            <h3 class="value text-secondary">$5000,000</h3>
+                            <h5 class="title">Total Revenue</h5>
+                            <h5 class="value text-secondary">{{number_format($totalReport['subtotal'])}}</h5>
                         </div>
                         <div class="chart-legend-1 col-12 col-sm-4">
-                            <h5 class="title">Total View</h5>
-                            <h3 class="value text-primary">10000,000</h3>
+                            <h5 class="title">Revenue Order New</h5>
+                            <h5 class="value text-primary">{{number_format($totalReport['new'])}}</h5>
                         </div>
                         <div class="chart-legend-1 col-12 col-sm-4">
-                            <h5 class="title">Total Support</h5>
-                            <h3 class="value text-warning">100,000</h3>
+                            <h5 class="title">Revenue Order In Progress</h5>
+                            <h5 class="value text-success">{{number_format($totalReport['inprogress'])}}</h5>
+                        </div>
+                        <div class="chart-legend-1 col-12 col-sm-4">
+                            <h5 class="title">Revenue Order Shipping</h5>
+                            <h5 class="value text-info">{{number_format($totalReport['shipping'])}}</h5>
+                        </div>
+                        <div class="chart-legend-1 col-12 col-sm-4">
+                            <h5 class="title">Revenue Order Done</h5>
+                            <h5 class="value text-warning">{{number_format($totalReport['done'])}}</h5>
                         </div>
                     </div>
                     <div class="chartjs-revenue-statistics-chart">
-                        <canvas id="chartjs-revenue-statistics-chart"></canvas>
+                        <canvas id="chart-revenue"></canvas>
                     </div>
                 </div>
             </div>
@@ -137,7 +145,7 @@
                 </div>
                 <div class="box-body">
                     <div class="chartjs-market-trends-chart">
-                        <canvas id="chartjs-market-trends-chart"></canvas>
+                        <canvas id="chart-market"></canvas>
                     </div>
                 </div>
             </div>
@@ -156,60 +164,41 @@
                             <!-- Table Head Start -->
                             <thead>
                             <tr>
-                                <th class="selector"><label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label></th>
-                                <!--<th class="selector h5"><button class="button-check"></button></th>-->
-                                <th><span>Image</span></th>
-                                <th><span>Product Name</span></th>
-                                <th><span>ID</span></th>
-                                <th><span>Quantity</span></th>
-                                <th><span>Price</span></th>
-                                <th><span>Status</span></th>
-                                <th></th>
+                                <th>No</th>
+                                <th>{{__('messages.lbl_table_invoice.no')}}</th>
+                                <th>{{__('messages.lbl_table_invoice.recipient_name')}}</th>
+                                <th>{{__('messages.lbl_table_invoice.phone')}}</th>
+                                <th class="no-sort">{{__('messages.lbl_table_invoice.invoice_status')}}</th>
+                                <th class="no-sort">{{__('messages.lbl_table_invoice.payment_status')}}</th>
+                                <th>{{__('messages.lbl_table_invoice.purchase_date')}}</th>
                             </tr>
                             </thead><!-- Table Head End -->
 
                             <!-- Table Body Start -->
                             <tbody>
-                            <tr>
-                                <td class="selector"><label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label></td>
-                                <td><img src="assets/images/product/list-product-1.jpg" alt="" class="table-product-image rounded-circle"></td>
-                                <td><a href="#">Microsoft surface pro 4</a></td>
-                                <td>#MSP40022</td>
-                                <td>05 - Products</td>
-                                <td>$60000000.00</td>
-                                <td><span class="badge badge-success">Paid</span></td>
-                                <td><a class="h3" href="#"><i class="zmdi zmdi-more"></i></a></td>
-                            </tr>
-                            <tr class="selected">
-                                <td class="selector"><label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label></td>
-                                <td><img src="assets/images/product/list-product-2.jpg" alt="" class="table-product-image rounded-circle"></td>
-                                <td><a href="#">Microsoft surface pro 4</a></td>
-                                <td>#MSP40022</td>
-                                <td>05 - Products</td>
-                                <td>$60000000.00</td>
-                                <td><span class="badge badge-success">Paid</span></td>
-                                <td><a class="h3" href="#"><i class="zmdi zmdi-more"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="selector"><label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label></td>
-                                <td><img src="assets/images/product/list-product-3.jpg" alt="" class="table-product-image rounded-circle"></td>
-                                <td><a href="#">Microsoft surface pro 4</a></td>
-                                <td>#MSP40022</td>
-                                <td>05 - Products</td>
-                                <td>$60000000.00</td>
-                                <td><span class="badge badge-warning">Due</span></td>
-                                <td><a class="h3" href="#"><i class="zmdi zmdi-more"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="selector"><label class="adomx-checkbox"><input type="checkbox"> <i class="icon"></i></label></td>
-                                <td><img src="assets/images/product/list-product-4.jpg" alt="" class="table-product-image rounded-circle"></td>
-                                <td><a href="#">Microsoft surface pro 4</a></td>
-                                <td>#MSP40022</td>
-                                <td>05 - Products</td>
-                                <td>$60000000.00</td>
-                                <td><span class="badge badge-danger">Reject</span></td>
-                                <td><a class="h3" href="#"><i class="zmdi zmdi-more"></i></a></td>
-                            </tr>
+                            @foreach($recentTran as $invoice)
+                                <tr>
+                                    <td>{{$invoice->id}}</td>
+                                    <td>{{ $invoice->invoice_no }}</td>
+                                    <td>{{ $invoice->recipient_name }}</td>
+                                    <td>{{$invoice->phone}}</td>
+                                    {{--<td>{{$invoice->address}}</td>--}}
+                                    <td>
+                                        @foreach(__('messages.lbl_invoice_active') as $key => $value)
+                                            @if($key == $invoice->invoice_status)
+                                                <p class="pt-2 pb-2 badge badge-outline {{$key == 0 ? 'badge-primary' : 'badge-success'}} w-75">{{$value}}</p>
+                                            @endif
+                                        @endforeach</td>
+                                    <td>
+                                        @foreach(__('messages.lbl_payment_active') as $key => $value)
+                                            @if($key == $invoice->payment_status)
+                                                <p class="pt-2 pb-2 badge badge-outline {{$key == 0 ? 'badge-danger' : 'badge-success'}} w-50">{{$value}}</p>
+                                            @endif
+                                        @endforeach
+                                    </td>
+                                    <td>{{date('d/m/Y', $invoice->purchase_date)}}</td>
+                                </tr>
+                            @endforeach
                             </tbody><!-- Table Body End -->
 
                         </table>
@@ -217,6 +206,152 @@
                 </div>
             </div>
         </div><!-- Recent Transaction End -->
-
     </div>
 @stop
+
+@section('after_script')
+    <script>
+        var list = {!! $totalRe !!}
+        var renew = {!! $totalReNew !!}
+        var reinpro = {!! $totalReIn !!}
+        var reship = {!! $totalReShip !!}
+        var redone = {!! $totalReDone !!}
+        var labels = [];
+        var datanew = [];
+        var datain = [];
+        var dataship = [];
+        var datadone = [];
+
+        list.forEach(function (abc) {
+            labels.push(abc.total_amount);
+        });
+        renew.forEach(function (abc) {
+            datanew.push(abc.total_amount);
+        });
+        reinpro.forEach(function (abc) {
+            datain.push(abc.total_amount);
+        });
+        reship.forEach(function (abc) {
+            dataship.push(abc.total_amount);
+        });
+        redone.forEach(function (abc) {
+            datadone.push(abc.total_amount);
+        });
+        if( $('#chart-revenue').length ) {
+            var ECBV = document.getElementById('chart-revenue').getContext('2d');
+            var ECBVconfig = {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                            label: 'Revenue Order New',
+                            data: datanew,
+                            backgroundColor: '#428bfa',
+                            fill: false,
+                        }
+                        ,{
+                            label: 'Revenue Order In Progress',
+                            data: datain,
+                            backgroundColor: '#29db2d',
+                            fill: false,
+                        },
+                        {
+                            label: 'Revenue Order Shipping',
+                            data: dataship,
+                            backgroundColor: '#17a2b8',
+                            fill: false,
+                        },
+                        {
+                            label: 'Revenue Order Done',
+                            data: datadone,
+                            backgroundColor: '#ff9666',
+                            fill: false,
+                        }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    legend: {
+                        labels: {
+                            fontColor: '#aaaaaa',
+                        }
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            gridLines: {
+                                color: 'rgba(136,136,136,0.1)',
+                                lineWidth: 1,
+                                drawBorder: false,
+                                zeroLineWidth: 1,
+                                zeroLineColor: 'rgba(136,136,136,0.1)',
+                            },
+                            ticks: {
+                                fontColor: '#aaaaaa',
+                            },
+                        }],
+                        yAxes: [{
+                            display: true,
+                            gridLines: {
+                                color: 'rgba(136,136,136,0.1)',
+                                lineWidth: 1,
+                                drawBorder: false,
+                                zeroLineWidth: 1,
+                                zeroLineColor: 'rgba(136,136,136,0.1)',
+                            },
+                            ticks: {
+                                fontColor: '#aaaaaa',
+                            },
+                        }]
+                    }
+                }
+            };
+            var ECBVchartjs = new Chart(ECBV, ECBVconfig);
+        }
+
+        if( $('#chart-market').length ) {
+            var customer = {!! count($customers) !!};
+            var products = {!! count($products) !!};
+            var totals = {!! count($invoices) !!};
+            var MTC = document.getElementById('chart-market').getContext('2d');
+            var MTCconfig = {
+                type: 'doughnut',
+                data: {
+                    labels: ['Customer', 'Invoice', 'Product'],
+                    datasets: [{
+                        data: [customer, totals,products],
+                        backgroundColor: [
+                            '#fb7da4',
+                            '#7dfb9b',
+                            '#ff9666',
+                        ],
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    legend: {
+                        labels: {
+                            boxWidth: 30,
+                            padding: 20,
+                            fontColor: '#aaaaaa',
+                        }
+                    },
+                    tooltips: {
+                        mode: 'point',
+                        intersect: false,
+                        xPadding: 10,
+                        yPadding: 10,
+                        caretPadding: 10,
+                        cornerRadius: 4,
+                        titleFontSize: 0,
+                        titleMarginBottom: 2,
+                    },
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    },
+                }
+            };
+            var MTCchartjs = new Chart(MTC, MTCconfig);
+        }
+    </script>
+@endsection

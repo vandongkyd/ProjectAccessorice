@@ -135,4 +135,9 @@ class HomeController extends Controller
         $detail = $this->homeService->cancelOrder($request);
         return \response()->json($detail, Response::HTTP_OK);
     }
+
+    public function doChangeInfo(Request $request){
+        $detail = $this->homeService->changeInfo($request);
+        return \response()->json($detail, Response::HTTP_OK);
+    }
 }

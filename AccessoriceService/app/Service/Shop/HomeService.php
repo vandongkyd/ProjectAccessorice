@@ -38,4 +38,6 @@ interface HomeService
     function invoiceListDetail(Request $request);
 
     function cancelOrder(Request $request);
+
+    function changeInfo(Request $request);
 }

@@ -10,4 +10,14 @@ interface DashboardService
     function getInvoice();
 
     function getProduct();
+
+    function recentTransaction();
+
+    function totalAmount();
+
+    function getTotalRe();
+    function getReNew();
+    function getReInprogress();
+    function getReShipping();
+    function getReDone();
 }

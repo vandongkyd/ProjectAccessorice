@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Invoice extends BaseModel
 {
+
     protected $table = 't_invoice';
 
 }

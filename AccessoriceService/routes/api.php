@@ -39,3 +39,4 @@ Route::post('invoicelist','Api\HomeController@allInvoice')->name('all.invoice');
 Route::post('history','Api\HomeController@allHistory')->name('all.history');
 Route::post('invoiceDetail','Api\HomeController@allInvoiceDetail')->name('detail.invoice');
 Route::post('canceled','Api\HomeController@doCanceled')->name('cancel.invoice');
+Route::post('change-info','Api\HomeController@doChangeInfo')->name('change.info');

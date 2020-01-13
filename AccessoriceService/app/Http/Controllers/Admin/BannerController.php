@@ -28,11 +28,6 @@ class BannerController extends Controller
      */
     public function index(){
         $banners = $this->bannerService->list();
-        $abc = "[{\"amount\":1200000.0,\"id\":9,\"images\":\"5dd0da7501c32_1573968501.jpg\",\"name\":\"RAM TEST B\",\"quality_item\":1}]";
-        $someArray = json_decode($abc, true);
-
-        print_r($someArray);        // Dump all data of the Array
-        echo $someArray[0]["name"];die(); // Access Array data
 
         return view('admin.banner.index',[
             'banners' => $banners,

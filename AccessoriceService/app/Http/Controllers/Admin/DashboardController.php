@@ -27,13 +27,27 @@ class DashboardController extends Controller
      * @return View: Admin.Dashboard
      */
     public function index(){
+        $recentTran = $this->dashboardService->recentTransaction();
         $invoices = $this->dashboardService->getInvoice();
         $customers = $this->dashboardService->getCustomer();
         $products = $this->dashboardService->getProduct();
+        $totalReport = $this->dashboardService->totalAmount();
+        $totalRe = $this->dashboardService->getTotalRe();
+        $totalReNew = $this->dashboardService->getReNew();
+        $totalReIn = $this->dashboardService->getReInprogress();
+        $totalReShip = $this->dashboardService->getReShipping();
+        $totalReDone = $this->dashboardService->getReDone();
         return view('admin.dashboard.dashboard',[
             'invoices' => $invoices,
             'customers' => $customers,
-            'products' => $products
+            'products' => $products,
+            'recentTran' => $recentTran,
+            'totalReport' => $totalReport,
+            'totalRe' => $totalRe,
+            'totalReNew' => $totalReNew,
+            'totalReIn' => $totalReIn,
+            'totalReShip' => $totalReShip,
+            'totalReDone' => $totalReDone,
         ]);
     }
 }

@@ -50,7 +50,13 @@ Route::group(['middleware' => 'locale'], function(){
         Route::group(['prefix' => 'customer'], function () {
             Route::get('/list', 'Admin\CustomerController@index')->name('customer.list');
             Route::get('/add', 'Admin\CustomerController@add')->name('customer.add');
-            Route::get('/edit', 'Admin\CustomerController@edit')->name('customer.create');
+            Route::get('/edit/{id}', 'Admin\CustomerController@edit')->name('customer.create');
+            Route::post('/add','Admin\CustomerController@doAdd')->name('customer.submit.add');
+            Route::post('/edit','Admin\CustomerController@doEdit')->name('customer.submit.edit');
+            Route::post('/delete','Admin\CustomerController@doDelete')->name('customer.submit.delete');
+            Route::post('/unlock', 'Admin\CustomerController@doUnlock')->name('customer.submit.unlock');
+            Route::post('/lock', 'Admin\CustomerController@doLock')->name('customer.submit.lock');
+            Route::post('/reset', 'Admin\CustomerController@doReset')->name('customer.submit.reset');
         });
 
         Route::group(['prefix' => 'discount'], function () {

@@ -257,4 +257,17 @@ class HomeServiceImpl implements HomeService
             return $invoice;
         }
     }
+
+    function changeInfo(Request $request)
+    {
+        $customer = Customer::findOrFail($request->get('id'));
+        $customer->first_name = $request->get('first_name');
+        $customer->last_name = $request->get('last_name');
+        $customer->address = $request->get('address');
+        $customer->gender = $request->get('gender');
+        $customer->updated = time();
+        if ($customer->save()){
+            return $customer;
+        }
+    }
 }

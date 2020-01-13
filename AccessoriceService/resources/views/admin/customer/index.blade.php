@@ -10,251 +10,143 @@
 
 @section('content-body')
     <div class="row">
-
-        <!--Default Data Table Start-->
         <div class="col-12 mb-30">
             <div class="box">
                 <div class="box-head">
-                    <h3 class="title">Default Table</h3>
+                    <div class="row">
+                        <h3 class="title col-lg-10 col-12">{{__('messages.lbl_screen_menu.list',['name' => __('messages.lbl_screen_menu.customers')])}}</h3>
+                        <div class="col-lg-2 col-12 text-right">
+                            <a href="{{route("customer.add")}}" role="button" class="button button-sm button-outline button-primary button-long text-center">
+                                <span><i class="fa fa-plus"></i>{{__('messages.lbl_btn.btn_add')}}</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="box-body">
 
-                    <table class="table table-bordered data-table data-table-default">
-                        <thead>
+                <div class="box-body">
+                    <table class="table table-bordered data-table data-table-default table-list text-center">
+                        <thead class="thead-dark">
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>No</th>
+                            <th>{{__('messages.lbl_table_customer.avatar')}}</th>
+                            <th>{{__('messages.lbl_table_customer.full_name')}}</th>
+                            <th>{{__('messages.lbl_table_customer.user_name')}}</th>
+                            <th>{{__('messages.lbl_table_customer.email')}}</th>
+                            <th>{{__('messages.lbl_table_customer.phone')}}</th>
+                            <th class="no-sort">{{__('messages.lbl_table_customer.status')}}</th>
+                            <th>{{__('messages.lbl_table_customer.date_create')}}</th>
+                            <th width="20%" class="no-sort">{{__('messages.lbl_action_table')}}</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                        </tr>
-                        <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
-                        </tr>
-                        <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009/01/12</td>
-                            <td>$86,000</td>
-                        </tr>
-                        <tr>
-                            <td>Cedric Kelly</td>
-                            <td>Senior Javascript Developer</td>
-                            <td>Edinburgh</td>
-                            <td>22</td>
-                            <td>2012/03/29</td>
-                            <td>$433,060</td>
-                        </tr>
-                        <tr>
-                            <td>Airi Satou</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>33</td>
-                            <td>2008/11/28</td>
-                            <td>$162,700</td>
-                        </tr>
-                        <tr>
-                            <td>Brielle Williamson</td>
-                            <td>Integration Specialist</td>
-                            <td>New York</td>
-                            <td>61</td>
-                            <td>2012/12/02</td>
-                            <td>$372,000</td>
-                        </tr>
-                        <tr>
-                            <td>Herrod Chandler</td>
-                            <td>Sales Assistant</td>
-                            <td>San Francisco</td>
-                            <td>59</td>
-                            <td>2012/08/06</td>
-                            <td>$137,500</td>
-                        </tr>
-                        <tr>
-                            <td>Rhona Davidson</td>
-                            <td>Integration Specialist</td>
-                            <td>Tokyo</td>
-                            <td>55</td>
-                            <td>2010/10/14</td>
-                            <td>$327,900</td>
-                        </tr>
-                        <tr>
-                            <td>Colleen Hurst</td>
-                            <td>Javascript Developer</td>
-                            <td>San Francisco</td>
-                            <td>39</td>
-                            <td>2009/09/15</td>
-                            <td>$205,500</td>
-                        </tr>
-                        <tr>
-                            <td>Sonya Frost</td>
-                            <td>Software Engineer</td>
-                            <td>Edinburgh</td>
-                            <td>23</td>
-                            <td>2008/12/13</td>
-                            <td>$103,600</td>
-                        </tr>
-                        <tr>
-                            <td>Jena Gaines</td>
-                            <td>Office Manager</td>
-                            <td>London</td>
-                            <td>30</td>
-                            <td>2008/12/19</td>
-                            <td>$90,560</td>
-                        </tr>
-                        <tr>
-                            <td>Quinn Flynn</td>
-                            <td>Support Lead</td>
-                            <td>Edinburgh</td>
-                            <td>22</td>
-                            <td>2013/03/03</td>
-                            <td>$342,000</td>
-                        </tr>
-                        <tr>
-                            <td>Charde Marshall</td>
-                            <td>Regional Director</td>
-                            <td>San Francisco</td>
-                            <td>36</td>
-                            <td>2008/10/16</td>
-                            <td>$470,600</td>
-                        </tr>
-                        <tr>
-                            <td>Haley Kennedy</td>
-                            <td>Senior Marketing Designer</td>
-                            <td>London</td>
-                            <td>43</td>
-                            <td>2012/12/18</td>
-                            <td>$313,500</td>
-                        </tr>
-                        <tr>
-                            <td>Tatyana Fitzpatrick</td>
-                            <td>Regional Director</td>
-                            <td>London</td>
-                            <td>19</td>
-                            <td>2010/03/17</td>
-                            <td>$385,750</td>
-                        </tr>
-                        <tr>
-                            <td>Michael Silva</td>
-                            <td>Marketing Designer</td>
-                            <td>London</td>
-                            <td>66</td>
-                            <td>2012/11/27</td>
-                            <td>$198,500</td>
-                        </tr>
-                        <tr>
-                            <td>Paul Byrd</td>
-                            <td>Chief Financial Officer (CFO)</td>
-                            <td>New York</td>
-                            <td>64</td>
-                            <td>2010/06/09</td>
-                            <td>$725,000</td>
-                        </tr>
-                        <tr>
-                            <td>Gloria Little</td>
-                            <td>Systems Administrator</td>
-                            <td>New York</td>
-                            <td>59</td>
-                            <td>2009/04/10</td>
-                            <td>$237,500</td>
-                        </tr>
-                        <tr>
-                            <td>Bradley Greer</td>
-                            <td>Software Engineer</td>
-                            <td>London</td>
-                            <td>41</td>
-                            <td>2012/10/13</td>
-                            <td>$132,000</td>
-                        </tr>
-                        <tr>
-                            <td>Dai Rios</td>
-                            <td>Personnel Lead</td>
-                            <td>Edinburgh</td>
-                            <td>35</td>
-                            <td>2012/09/26</td>
-                            <td>$217,500</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                            <td>Development Lead</td>
-                            <td>New York</td>
-                            <td>30</td>
-                            <td>2011/09/03</td>
-                            <td>$345,000</td>
-                        </tr>
-                        <tr>
-                            <td>Yuri Berry</td>
-                            <td>Chief Marketing Officer (CMO)</td>
-                            <td>New York</td>
-                            <td>40</td>
-                            <td>2009/06/25</td>
-                            <td>$675,000</td>
-                        </tr>
-                        <tr>
-                            <td>Caesar Vance</td>
-                            <td>Pre-Sales Support</td>
-                            <td>New York</td>
-                            <td>21</td>
-                            <td>2011/12/12</td>
-                            <td>$106,450</td>
-                        </tr>
-                        <tr>
-                            <td>Doris Wilder</td>
-                            <td>Sales Assistant</td>
-                            <td>Sidney</td>
-                            <td>23</td>
-                            <td>2010/09/20</td>
-                            <td>$85,600</td>
-                        </tr>
-                        <tr>
-                            <td>Angelica Ramos</td>
-                            <td>Chief Executive Officer (CEO)</td>
-                            <td>London</td>
-                            <td>47</td>
-                            <td>2009/10/09</td>
-                            <td>$1,200,000</td>
-                        </tr>
-                        <tr>
-                            <td>Gavin Joyce</td>
-                            <td>Developer</td>
-                            <td>Edinburgh</td>
-                            <td>42</td>
-                            <td>2010/12/22</td>
-                            <td>$92,575</td>
-                        </tr>
+                        @foreach($customers as $user)
+                            <tr>
+                                <td>{{$user->id}}</td>
+                                <td style="text-align: -webkit-center;">
+                                    @if(isset($user->avatar))
+                                        <img src="{{asset('upload')}}/{{$user->avatar}}" alt="" class="product-image rounded-circle avatar">
+                                    @else
+                                        <img src="{{asset('img')}}/{{$user->gender == 0 ? 'icon_men.png' : 'icon_woman.png'}}" alt="" class="product-image rounded-circle avatar">
+                                    @endif
+                                </td>
+                                <td>{{$user->last_name}} {{$user->first_name}}</td>
+                                <td>{{$user->user_name}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>{{$user->phone}}</td>
+                                <td>
+                                    @foreach(__('messages.lbl_status_user') as $key => $value)
+                                        @if($key == $user->status)
+                                            <p class="pt-2 pb-2 badge badge-outline @if($key == 0) badge-primary @elseif($key == 1) badge-success @else badge-danger @endif w-75">{{$value}}</p>
+                                        @endif
+                                    @endforeach
+                                </td>
+                                <td>{{date('d/m/Y', $user->created)}}</td>
+                                <td class="text-center">
+                                    <button class="button button-sm button-box button-outline button-warning"
+                                            onclick="popupConfirm('{{$user->id}}','reset')"
+                                            data-toggle="tooltip" data-placement="top" title="{{__('messages.lbl_btn.btn_reset')}}">
+                                        <i class="fa fa-undo text_white"></i>
+                                    </button>
+                                    <a href="{{url('admins/customer/edit')}}/{{$user->id}}" data-toggle="tooltip" data-placement="top" title="{{__('messages.lbl_btn.btn_edit')}}"
+                                       class="button button-sm button-box button-outline button-primary">
+                                        <i class="fa fa-pencil-square-o text_white"></i>
+                                    </a>
+                                    <button class="button button-sm button-box button-outline button-info"
+                                            data-toggle="tooltip" data-placement="top" title="{{$user->status != 2 ? __('messages.lbl_btn.btn_lock') : __('messages.lbl_btn.btn_unlock') }}"
+                                           onclick="popupConfirm('{{$user->id}}','{{$user->status != 2 ? 'lock' : 'unlock'}}')">
+                                        <i class="fa {{$user->status != 2 ? 'fa-lock' : 'fa-unlock' }} text_white"></i>
+                                    </button>
+                                    <button class="button button-sm button-box button-outline button-danger"
+                                            data-toggle="tooltip" data-placement="top" title="{{__('messages.lbl_btn.btn_delete')}}"
+                                            onclick="popupConfirm('{{$user->id}}','delete')">
+                                        <i class="fa fa-trash-o text_white"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
                         </tbody>
-                        <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
-                        </tfoot>
                     </table>
-
                 </div>
             </div>
         </div>
-
     </div>
 @stop
+
+@section('modal')
+    <div class="modal fade" id="modalConfirm">
+        <form role="form" id="f_popup" action="{{route('customer.submit.delete')}}" method="post">
+            @csrf
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="title" class="modal-title">{{__('messages.lbl_messages.confirm_delete')}}</h5>
+                        <button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="id" id="id_user">
+                        <p id="messages">{{__('messages.lbl_messages.msg_confirm_delete',['name' => __('messages.lbl_screen_menu.user')])}}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="button button-outline button-danger button-sm button-short" data-dismiss="modal">
+                            <i class="fa fa-close"></i> <span>{{__('messages.lbl_btn.btn_cancel')}}</span>
+                        </button>
+                        <button type="submit" id="btn_popup" class="button button-outline button-primary button-sm button-short">
+                            <i class="fa fa-trash-o"></i> <span>{{__('messages.lbl_btn.btn_delete')}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+@stop
+
+@section('after_script')
+    <script>
+        // Delete User
+        function popupConfirm(id,mod) {
+            if (mod == 'delete'){
+                $('#f_popup').attr('action', '{{ route('customer.submit.delete') }}');
+                $('#title').html('{{__('messages.lbl_messages.confirm_delete')}}');
+                $('#messages').html('{{__('messages.lbl_messages.msg_confirm_delete',['name' => __('messages.lbl_screen_menu.customers')])}}');
+                $('#btn_popup').html('<i class="fa fa-trash-o"></i> <span>{{__('messages.lbl_btn.btn_delete')}}</span>');
+            }else if (mod == 'lock'){
+                $('#f_popup').attr('action', '{{ route('customer.submit.lock') }}');
+                $('#title').html('{{__('messages.lbl_messages.confirm_lock')}}');
+                $('#messages').html('{{__('messages.lbl_messages.msg_confirm_lock',['name' => __('messages.lbl_screen_menu.customers')])}}');
+                $('#btn_popup').html('<i class="fa fa-lock"></i> <span>{{__('messages.lbl_btn.btn_lock')}}</span>');
+            } else if (mod == 'unlock'){
+                $('#f_popup').attr('action', '{{ route('customer.submit.unlock') }}');
+                $('#title').html('{{__('messages.lbl_messages.confirm_unlock')}}');
+                $('#messages').html('{{__('messages.lbl_messages.msg_confirm_unlock',['name' => __('messages.lbl_screen_menu.customers')])}}');
+                $('#btn_popup').html('<i class="fa fa-unlock"></i> <span>{{__('messages.lbl_btn.btn_unlock')}}</span>')
+            } else {
+                $('#f_popup').attr('action', '{{ route('customer.submit.reset') }}');
+                $('#title').html('{{__('messages.lbl_messages.confirm_reset')}}');
+                $('#messages').html('{{__('messages.lbl_messages.msg_confirm_reset',['name' => __('messages.lbl_screen_menu.customers')])}}');
+                $('#btn_popup').html('<i class="fa fa-undo"></i> <span>{{__('messages.lbl_btn.btn_reset')}}</span>')
+            }
+            $('#id_user').val(id);
+            $("#modalConfirm").modal('show');
+        }
+    </script>
+@endsection
