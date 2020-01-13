@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/rootLayout"
+    android:background="#ffffff"
+    android:layout_height="match_parent"
+    tools:context=".InfoActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar1"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryDark"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Shop Accessories"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.ButtonBarLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/btn_back"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center|left"
+            android:background="@drawable/ic_keyboard_backspace"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:id="@+id/btn_update"
+        android:text="Update Info"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_margin="8dp"
+        android:layout_below="@id/toolbar1"
+        android:layout_width="match_parent"
+        android:id="@+id/ln_layout"
+        android:orientation="vertical"
+        android:layout_above="@id/btn_update"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="@drawable/border_edittext"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:textSize="20sp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:textColorHint="#63458EDB"
+                    android:drawableStart="@drawable/ic_contacts_black_24dp"
+                    android:id="@+id/edt_last_name"
+                    android:textColor="#458edb"
+                    android:inputType="text"
+                    android:hint="Last Name"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/border_edittext"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:textSize="20sp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:textColorHint="#63458EDB"
+                    android:drawableStart="@drawable/ic_contacts_black_24dp"
+                    android:id="@+id/edt_first_name"
+                    android:textColor="#458edb"
+                    android:inputType="text"
+                    android:hint="First Name"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/border_edittext"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:textSize="20sp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:textColorHint="#63458EDB"
+                    android:drawableStart="@drawable/ic_contact_phone_black_24dp"
+                    android:id="@+id/edt_phone"
+                    android:textColor="#458edb"
+                    android:inputType="text"
+                    android:hint="Phone"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/border_edittext"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:drawableStart="@drawable/ic_email_black_24dp"
+                    android:id="@+id/edt_email"
+                    android:textColor="#458edb"
+                    android:textColorHint="#63458EDB"
+                    android:backgroundTint="@android:color/transparent"
+                    android:inputType="text"
+                    android:textSize="20sp"
+                    android:hint="Email"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/border_edittext"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:drawableStart="@drawable/ic_account_box_black_24dp"
+                    android:id="@+id/edt_user"
+                    android:textColor="#458edb"
+                    android:textColorHint="#63458EDB"
+                    android:backgroundTint="@android:color/transparent"
+                    android:inputType="text"
+                    android:textSize="20sp"
+                    android:hint="Username"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:background="@drawable/border_edittext"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:drawableStart="@drawable/ic_location_on"
+                    android:id="@+id/edt_address"
+                    android:textColor="#458edb"
+                    android:textColorHint="#63458EDB"
+                    android:backgroundTint="@android:color/transparent"
+                    android:inputType="text"
+                    android:textSize="20sp"
+                    android:hint="Address"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

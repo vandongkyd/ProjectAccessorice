@@ -384,6 +384,14 @@ public class HomeActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        if (id == R.id.nav_info){
+            if (Common.currentCustomer != null) {
+                startActivity(new Intent(HomeActivity.this, InfoActivity.class));
+            }else {
+                Common.PopupMessages("Information", HomeActivity.this);
+            }
+
+        }
         if (id == R.id.nav_loacation){
             startActivity(new Intent(HomeActivity.this, NearbyStoreActivity.class));
         }

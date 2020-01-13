@@ -128,4 +128,16 @@ public interface ICallShopAPI {
     Call<String> cancelOrder(
             @Field("invoice_id") String invoiceId
     );
+
+    //Call API register User
+    @FormUrlEncoded
+    @POST("change-info")
+    Call<Customer> changeinfo(
+            @Field("id") String id,
+            @Field("first_name") String first_name,
+            @Field("last_name") String last_name,
+            @Field("address") String address,
+            @Field("gender") String gender
+    );
+
 }

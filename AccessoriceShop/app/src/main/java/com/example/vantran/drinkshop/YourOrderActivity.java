@@ -52,7 +52,6 @@ public class YourOrderActivity extends AppCompatActivity {
     ButtonBarLayout btn_back;
     public MenuItem menuItem1;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
-    IDrinkShopAPI iDrinkShopAPI;
     ICallShopAPI iCallShopAPI;
 
     @Override

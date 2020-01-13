@@ -37,8 +37,8 @@ import java.util.List;
 
 public class Common {
     // url http api
-    private static final String HOST = "http://192.168.1.7";
-    private static final String HOST_API = "http://192.168.1.7";
+    private static final String HOST = "http://192.168.1.9";
+    private static final String HOST_API = "http://192.168.1.9";
     public static final String BASE_URL_API = HOST_API + "/WorkLaravel/public/api/";
     public static final String BASE_URL = HOST + "/shopdrink/";
     public static final String API_TOKEN_URL = HOST + "/shopdrink/braintree/main.php";
