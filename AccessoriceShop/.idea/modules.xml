@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AccessoriceShop.iml" filepath="$PROJECT_DIR$/AccessoriceShop.iml" group="AccessoriceShop" />
+      <module fileurl="file://$PROJECT_DIR$/aFileChooser/AccessoriceShop-aFileChooser.iml" filepath="$PROJECT_DIR$/aFileChooser/AccessoriceShop-aFileChooser.iml" group="AccessoriceShop/aFileChooser" />
+      <module fileurl="file://$PROJECT_DIR$/app/AccessoriceShop-app.iml" filepath="$PROJECT_DIR$/app/AccessoriceShop-app.iml" group="AccessoriceShop/app" />
       <module fileurl="file://$PROJECT_DIR$/aFileChooser/aFileChooser.iml" filepath="$PROJECT_DIR$/aFileChooser/aFileChooser.iml" group="AccessoriceShop/aFileChooser" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="AccessoriceShop/app" />
     </modules>

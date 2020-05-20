@@ -62,9 +62,9 @@ public class OrderDetailActivity extends AppCompatActivity {
         Invoice order = Common.currentInvoice;
         iCallShopAPI = Common.callAPI();
         t_order_date.setText(Common.getDateFormat(order.getCreated()));
-        t_price.setText(new StringBuilder("$").append(order.getTotal_amount().toString()));
+        t_price.setText(Common.formatNumber(Double.parseDouble(order.getTotal_amount())) + " VND");
         t_order_id.setText(new StringBuilder("#").append(order.getInvoice_no()).toString());
-        t_order_comemt.setText("asda");
+        t_order_comemt.setText(order.getRecipient_name());
         t_order_address.setText(order.getAddress());
         t_order_status.setText(Common.convertCodeToStatus(Integer.valueOf(order.getInvoice_status())));
         rv_order_detail.setLayoutManager(new LinearLayoutManager(this));

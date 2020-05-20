@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.ButtonBarLayout;
 
 import android.view.View;
 import android.widget.Button;
@@ -39,6 +40,8 @@ public class InfoActivity extends AppCompatActivity {
     EditText edt_user;
     @BindView(R.id.edt_address)
     EditText edt_address;
+    @BindView(R.id.btn_back)
+    ButtonBarLayout btn_back;
 
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     ICallShopAPI iCallShopAPI;
@@ -64,6 +67,12 @@ public class InfoActivity extends AppCompatActivity {
                 String firstname = edt_first_name.getText().toString();
                 String address = edt_address.getText().toString();
                 changeInfo(customer.getId(), lastname, firstname, address, "1");
+            }
+        });
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

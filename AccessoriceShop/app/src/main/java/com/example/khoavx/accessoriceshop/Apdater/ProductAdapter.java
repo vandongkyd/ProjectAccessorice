@@ -38,13 +38,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     private Context context;
     private List<Product> drinks;
-    private List<Product> drinksearch;
+    private List<Product> drinkSearch;
     private OnItemClickListener onItemClickListener;
 
     public ProductAdapter(Context context, List<Product> drinks) {
         this.context = context;
         this.drinks = drinks;
-        this.drinksearch = drinks;
+        this.drinkSearch = drinks;
     }
 
     public interface OnItemClickListener {
@@ -61,29 +61,28 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Product drink = drinksearch.get(position);
-        Picasso.with(context).load(Common.BASE_URL_IMAGE_API + drink.getFile_name()).into(holder.img_drink);
+        Product product = drinkSearch.get(position);
+        Picasso.with(context).load(Common.BASE_URL_IMAGE_API + product.getFile_name()).into(holder.img_drink);
         double price = 0;
-        Toast.makeText(context, drink.getPercent_reduction()+"", Toast.LENGTH_SHORT).show();
-//        if (Integer.parseInt(drink.getPercent_reduction()) > 0){
-//            holder.tv_discount.setText("-" + drink.getPercent_reduction() + "%");
-//            price = (Double.parseDouble(drink.getProduct_price()) - (Double.parseDouble(drink.getProduct_price()) * Double.parseDouble(drink.getPercent_reduction())) / 100);
-//        }else {
+        if (product.getPercent_reduction() != null && Integer.parseInt(product.getPercent_reduction()) > 0){
+            holder.tv_discount.setText("-" + product.getPercent_reduction() + "%");
+            price = (Double.parseDouble(product.getProduct_price()) - (Double.parseDouble(product.getProduct_price()) * Double.parseDouble(product.getPercent_reduction())) / 100);
+        }else {
             holder.tv_discount.setVisibility(View.INVISIBLE);
-            price = Double.parseDouble(drink.getProduct_price());
-//        }
+            price = Double.parseDouble(product.getProduct_price());
+        }
         holder.t_price.setText(Common.formatNumber(price) + " VND");
-        holder.t_name_drink.setText(drink.getProduct_name());
+        holder.t_name_drink.setText(product.getProduct_name());
 
         holder.btn_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDialogAddToCart(drink);
+                showDialogAddToCart(product);
             }
         });
         // set Favorite
 
-        if (Common.favoriteRepository.isFavoriteItems(Integer.parseInt(drink.getId())) == 1) {
+        if (Common.favoriteRepository.isFavoriteItems(Integer.parseInt(product.getId())) == 1) {
             holder.btn_like.setImageResource(R.drawable.ic_favorite_white);
         } else {
             holder.btn_like.setImageResource(R.drawable.ic_favorite_border_white);
@@ -93,11 +92,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             @Override
             public void onClick(View v) {
                 if (Common.currentCustomer != null) {
-                    if (Common.favoriteRepository.isFavoriteItems(Integer.parseInt(drink.getId())) != 1) {
-                        addOrRemoveToFavorite(drink, true);
+                    if (Common.favoriteRepository.isFavoriteItems(Integer.parseInt(product.getId())) != 1) {
+                        addOrRemoveToFavorite(product, true);
                         holder.btn_like.setImageResource(R.drawable.ic_favorite_white);
                     } else {
-                        addOrRemoveToFavorite(drink, false);
+                        addOrRemoveToFavorite(product, false);
                         holder.btn_like.setImageResource(R.drawable.ic_favorite_border_white);
                     }
                 } else {
@@ -108,7 +107,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onItemClickListener(drink);
+                onItemClickListener(product);
             }
         });
     }
@@ -134,7 +133,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return drinksearch.size();
+        return drinkSearch.size();
     }
 
     private void onItemClickListener(Product drink) {
@@ -155,7 +154,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             protected FilterResults performFiltering(CharSequence charSequence) {
                 String charString = charSequence.toString();
                 if (charString.isEmpty()) {
-                    drinksearch = drinks;
+                    drinkSearch = drinks;
                 } else {
                     List<Product> filteredList = new ArrayList<>();
                     for (Product row : drinks) {
@@ -166,18 +165,17 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                             filteredList.add(row);
                         }
                     }
-
-                    drinksearch = filteredList;
+                    drinkSearch = filteredList;
                 }
 
                 FilterResults filterResults = new FilterResults();
-                filterResults.values = drinksearch;
+                filterResults.values = drinkSearch;
                 return filterResults;
             }
 
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                drinksearch = (List<Product>) filterResults.values;
+                drinkSearch = (List<Product>) filterResults.values;
                 notifyDataSetChanged();
             }
         };
@@ -251,7 +249,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         double price = (Double.parseDouble(drink.getProduct_price()));
 
         double finalPrice = Math.round(price);
-        t_price.setText(new StringBuilder("$").append(finalPrice));
+        t_price.setText(Common.formatNumber(finalPrice) + " VND");
         builder.setPositiveButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

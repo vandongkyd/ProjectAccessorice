@@ -55,7 +55,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         Picasso.with(context).load(Common.BASE_URL_IMAGE_API + cart.images).into(holder.img_cart);
 
         holder.t_count.setNumber(String.valueOf(cart.quality_item));
-        holder.t_price.setText(new StringBuilder("$").append(cart.amount));
+        holder.t_price.setText(Common.formatNumber(cart.amount) + " VND");
         holder.t_name_cart.setText(new StringBuilder(cart.name).append(" x").append(cart.quality_item));
 
         final double priceOneCup =  cart.amount / cart.quality_item;
@@ -67,7 +67,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                 cart1.amount = Math.round(priceOneCup*newValue);
                 Common.cartRepository.updateCart(cart1);
 
-                holder.t_price.setText(new StringBuilder("$").append(cart.amount));
+                holder.t_price.setText(Common.formatNumber(cart.amount) + " VND");
             }
         });
     }
@@ -105,8 +105,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         ImageView img_cart;
         @BindView(R.id.t_price)
         TextView t_price;
-        @BindView(R.id.t_sug_ice)
-        TextView t_sug_ice;
         @BindView(R.id.t_count)
         ElegantNumberButton t_count;
         @BindView(R.id.t_name_cart)

@@ -55,7 +55,7 @@ public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.ViewHolder> {
             if (drink.phone.equals(Common.currentCustomer.getPhone())) {
                 Picasso.with(context).load(Common.BASE_URL_IMAGE_API + drink.images).into(holder.img_drink);
 
-                holder.t_price.setText(new StringBuilder("$").append(drink.price));
+                holder.t_price.setText(Common.formatNumber(drink.price) + " VND");
                 holder.t_name_drink.setText(drink.name);
 
                 holder.btn_cart.setOnClickListener(new View.OnClickListener() {
@@ -184,7 +184,7 @@ public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.ViewHolder> {
         double price = (Double.valueOf(drink.price) * Double.valueOf(number) + Common.toppingPrice);
 
         double finalPrice = Math.round(price);
-        t_price.setText(new StringBuilder("$").append(finalPrice));
+        t_price.setText(Common.formatNumber(finalPrice) + " VND");
         builder.setPositiveButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

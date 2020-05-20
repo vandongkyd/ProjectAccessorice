@@ -46,11 +46,11 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         Invoice order = orders.get(position);
 
         holder.t_order_date.setText(Common.getDateFormat(order.getCreated()));
-        holder.t_price.setText(new StringBuilder("$").append(order.getTotal_amount()));
+        holder.t_price.setText(Common.formatNumber(Double.parseDouble(order.getTotal_amount())) + " VND");
         holder.t_order_id.setText(new StringBuilder("#").append(order.getInvoice_no()).toString());
-        holder.t_order_comemt.setText(new StringBuilder("Coment: ").append("Sadsd").toString());
+        holder.t_order_comemt.setText(new StringBuilder("Recipient: ").append(order.getRecipient_name()).toString());
         holder.t_order_address.setText(new StringBuilder("Address: ").append(order.getAddress()).toString());
-        holder.t_order_status.setText(new StringBuilder("Status: ").append(Common.convertCodeToStatus(Integer.valueOf(order.getInvoice_status())).toString()));
+        holder.t_order_status.setText(new StringBuilder("Status: ").append(Common.convertCodeToStatus(Integer.parseInt(order.getInvoice_status())).toString()));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

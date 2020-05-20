@@ -71,7 +71,7 @@
     <div class="footer-section">
         <div class="container-fluid">
             <div class="footer-copyright text-center">
-                <p class="text-body-light">2019 &copy; <a>Mr.Dong</a></p>
+                <p class="text-body-light">2020 &copy;</p>
             </div>
         </div>
     </div>

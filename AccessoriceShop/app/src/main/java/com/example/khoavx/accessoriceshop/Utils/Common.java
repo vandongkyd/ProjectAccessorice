@@ -37,8 +37,8 @@ import java.util.List;
 
 public class Common {
     // url http api
-    private static final String HOST = "http://192.168.1.72:8000";
-    private static final String HOST_API = "http://192.168.1.72:8000";
+    private static final String HOST = "http://192.168.1.14:8000";
+    private static final String HOST_API = "http://192.168.1.14:8000";
     public static final String BASE_URL_API = HOST_API + "/api/";
     public static final String API_TOKEN_URL = HOST + "/shopdrink/braintree/main.php";
     public static final String BASE_URL_IMAGE_API = HOST_API + "/upload/";

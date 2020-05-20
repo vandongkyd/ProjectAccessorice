@@ -55,7 +55,7 @@ public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.
         Picasso.with(context).load(Common.BASE_URL_IMAGE_API + cart.getFile_name()).into(holder.img_cart);
 
         holder.t_count.setNumber(String.valueOf(cart.getQuality_item()));
-        holder.t_price.setText(new StringBuilder("$").append(cart.getAmount()));
+        holder.t_price.setText(Common.formatNumber(Double.parseDouble(cart.getAmount())) + " VND");
         holder.t_name_cart.setText(new StringBuilder(cart.getProduct_name()).append(" x").append(cart.getQuality_item()));
 
 
@@ -91,8 +91,6 @@ public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.
         ImageView img_cart;
         @BindView(R.id.t_price)
         TextView t_price;
-        @BindView(R.id.t_sug_ice)
-        TextView t_sug_ice;
         @BindView(R.id.t_count)
         ElegantNumberButton t_count;
         @BindView(R.id.tv_count)

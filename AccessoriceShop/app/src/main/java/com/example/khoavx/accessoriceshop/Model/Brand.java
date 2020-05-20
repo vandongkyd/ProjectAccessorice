@@ -10,9 +10,6 @@ public class Brand {
     private String created ;
     private String updated ;
 
-    public Brand(){
-
-    }
 
     public String getId() {
         return id;

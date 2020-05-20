@@ -35,7 +35,9 @@ class HomeServiceImpl implements HomeService
             })->orWhere(function ($query) use ($date) {
                 $query->where(DB::raw("(DATE_FORMAT(from_unixtime(banner_date_end),'%Y-%m-%d'))"),'>', $date)
                     ->whereNull('banner_date_start');
-            })->get();
+            })
+            ->orderBy('id','DESC')
+            ->get();
         return $banners;
     }
 

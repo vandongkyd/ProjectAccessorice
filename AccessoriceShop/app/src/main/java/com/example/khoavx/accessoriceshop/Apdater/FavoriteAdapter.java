@@ -52,7 +52,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
         Picasso.with(context).load(Common.BASE_URL_IMAGE_API + favorite.images).into(holder.img_cart);
 
         holder.t_name_cart.setText(favorite.name);
-        holder.t_price.setText(new StringBuilder("$").append(favorite.price).toString());
+        holder.t_price.setText(Common.formatNumber(favorite.price) + " VND");
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -147,7 +147,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                         }else {
                             price = Double.valueOf(product.getProduct_price());
                         }
-                        t_price.setText(new StringBuilder("$").append(String.valueOf(price)));
+                        t_price.setText(Common.formatNumber(price) + " VND");
                         t_name_drink.setText(product.getProduct_name());
                         t_discount.setText(product.getDiscount_name());
                         t_category.setText(product.getCategory_name());
@@ -267,7 +267,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         double price = (Double.valueOf(drink.getProduct_price()));
 
         double finalPrice = Math.round(price);
-        t_price.setText(new StringBuilder("$").append(finalPrice));
+        t_price.setText(Common.formatNumber(finalPrice) + " VND");
         builder.setPositiveButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
