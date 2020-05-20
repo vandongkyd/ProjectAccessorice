@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:id="@+id/rootLayout"
     android:layout_height="match_parent"
-    tools:context="com.example.vantran.drinkshop.FavoriteListActivity">
+    tools:context="com.example.khoavx.accessoriceshop.FavoriteListActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:id="@+id/toolbar1"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -30,7 +30,7 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content" />
 
-        <android.support.v7.widget.ButtonBarLayout
+        <androidx.appcompat.widget.ButtonBarLayout
             android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_marginLeft="5dp"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"/>
     </FrameLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_margin="8dp"
         android:layout_below="@id/toolbar1"
         android:layout_width="match_parent"

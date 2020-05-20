@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    tools:context="com.example.vantran.drinkshop.SearchActivity">
+    tools:context="com.example.khoavx.accessoriceshop.SearchActivity">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toolbar1"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -28,7 +28,7 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content" />
 
-        <android.support.v7.widget.ButtonBarLayout
+        <androidx.appcompat.widget.ButtonBarLayout
             android:layout_width="wrap_content"
             android:id="@+id/btn_back"
             android:layout_marginLeft="5dp"
@@ -56,7 +56,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginBottom="8dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_search_silver"/>
+                app:srcCompat="@drawable/ic_search_silver"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,19 +67,10 @@
                 android:paddingBottom="4dp"
                 android:background="@android:color/transparent"
                 android:id="@+id/ed_search"
-                android:hint="Search Drink ..."/>
-
-
-            <SearchView
-                android:layout_width="match_parent"
-                android:visibility="gone"
-                android:id="@+id/search_buyer"
-                android:layout_height="50dp"
-                android:queryHint="Search..."/>
-
+                android:hint="Search Product ..."/>
         </LinearLayout>
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:padding="8dp"
             android:layout_width="match_parent"
             android:id="@+id/rv_search"

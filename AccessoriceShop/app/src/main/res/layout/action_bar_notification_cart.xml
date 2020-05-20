@@ -7,7 +7,7 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:src="@drawable/ic_shopping_cart"
+        app:srcCompat="@drawable/ic_shopping_cart"
         android:id="@+id/cart_icon"
         android:layout_height="wrap_content" />
 

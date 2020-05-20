@@ -6,14 +6,14 @@
     android:orientation="vertical"
     android:background="#ffffff"
     android:layout_height="match_parent"
-    tools:context="com.example.vantran.drinkshop.ProductActivity">
+    tools:context="com.example.khoavx.accessoriceshop.ProductActivity">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toolbar1"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -29,7 +29,7 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content" />
 
-        <android.support.v7.widget.ButtonBarLayout
+        <androidx.appcompat.widget.ButtonBarLayout
             android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_marginLeft="5dp"
@@ -53,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:id="@+id/icon_card"
-                    android:src="@drawable/ic_shopping_cart"/>
+                    app:srcCompat="@drawable/ic_shopping_cart"/>
 
                 <TextView
                     android:id="@+id/cart_badge"
@@ -72,16 +72,16 @@
 
             </FrameLayout>
 
-            <android.support.v7.widget.SearchView
+            <androidx.appcompat.widget.SearchView
                 android:id="@+id/searchView"
                 style="@style/SearchViewStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-            </android.support.v7.widget.SearchView>
+            </androidx.appcompat.widget.SearchView>
         </LinearLayout>
     </FrameLayout>
 
-    <android.support.v4.widget.SwipeRefreshLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:id="@+id/swipe_to_ref"
@@ -100,7 +100,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:scaleType="fitXY"
-                    android:src="@drawable/bg_header"
+                    app:srcCompat="@drawable/bg_header"
                     android:layout_height="wrap_content" />
 
                 <TextView
@@ -113,12 +113,12 @@
                     android:textColor="@android:color/white"
                     android:textSize="30dp" />
             </FrameLayout>
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:id="@+id/rv_drink"
                 android:layout_weight="6"
                 android:layout_margin="8dp"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
-    </android.support.v4.widget.SwipeRefreshLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>

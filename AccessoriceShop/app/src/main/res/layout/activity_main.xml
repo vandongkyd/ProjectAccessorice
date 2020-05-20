@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vantran.drinkshop.MainActivity"
+    tools:context="com.example.khoavx.accessoriceshop.MainActivity"
     android:fillViewport="true">
 
 <LinearLayout
@@ -20,7 +20,7 @@
        android:id="@+id/toolbar1"
        android:theme="@style/AppTheme.AppBarOverlay">
 
-      <android.support.v7.widget.Toolbar
+      <androidx.appcompat.widget.Toolbar
           android:id="@+id/toolbar"
           android:layout_width="match_parent"
           android:layout_height="?attr/actionBarSize"
@@ -36,7 +36,7 @@
           android:layout_gravity="center"
           android:layout_height="wrap_content" />
 
-      <android.support.v7.widget.ButtonBarLayout
+      <androidx.appcompat.widget.ButtonBarLayout
           android:id="@+id/btn_back"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
              android:layout_alignParentTop="true"
              android:id="@+id/img_icon"
              android:layout_width="wrap_content"
-             android:src="@drawable/project_logo"
+             app:srcCompat="@drawable/project_logo"
              android:layout_height="200dp" />
          <TabWidget
              android:id="@android:id/tabs"
@@ -312,7 +312,7 @@
           android:layout_gravity="center"
           android:layout_width="36dp"
           android:layout_height="36dp"
-          android:src="@drawable/icon_google" />
+          app:srcCompat="@drawable/icon_google" />
    </LinearLayout>
 </LinearLayout>
 </ScrollView>

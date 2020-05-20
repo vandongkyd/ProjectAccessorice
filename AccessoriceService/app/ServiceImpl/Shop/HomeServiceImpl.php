@@ -249,7 +249,8 @@ class HomeServiceImpl implements HomeService
     {
         $id = $request->get('invoice_id');
 
-        $invoice = DB::table('t_invoice')->where('del_flg', '=', 0)
+        $invoice = DB::table('t_invoice')
+            ->where('del_flg', '=', 0)
             ->where('id', '=' , $id)->first();
         $invoice->invoice_status = '4';
 
@@ -261,13 +262,16 @@ class HomeServiceImpl implements HomeService
     function changeInfo(Request $request)
     {
         $customer = Customer::findOrFail($request->get('id'));
-        $customer->first_name = $request->get('first_name');
-        $customer->last_name = $request->get('last_name');
-        $customer->address = $request->get('address');
-        $customer->gender = $request->get('gender');
-        $customer->updated = time();
-        if ($customer->save()){
-            return $customer;
+        if ($customer instanceof Customer) {
+            $customer->first_name = $request->get('first_name');
+            $customer->last_name = $request->get('last_name');
+            $customer->address = $request->get('address');
+            $customer->gender = $request->get('gender');
+            $customer->updated = time();
+            if ($customer->save()) {
+                return $customer;
+            }
         }
+        return $customer;
     }
 }
