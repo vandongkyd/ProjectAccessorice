@@ -44,6 +44,7 @@ import com.example.khoavx.accessoriceshop.Utils.UploadCallBack;
 import com.facebook.accountkit.AccountKit;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -155,7 +156,6 @@ public class HomeActivity extends AppCompatActivity
                 getInforUser();
             }
         });
-//        updateTokenServer();
     }
 
     @SuppressLint("SetTextI18n")
@@ -169,7 +169,6 @@ public class HomeActivity extends AppCompatActivity
             }
         }
     }
-
 
     private void chooseImage() {
         startActivityForResult(Intent.createChooser(FileUtils.createGetContentIntent(),"Select a file"),
@@ -424,6 +423,7 @@ public class HomeActivity extends AppCompatActivity
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 AccountKit.logOut();
+                FirebaseAuth.getInstance().signOut();
                 Intent i = new Intent(HomeActivity.this, HomeActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);

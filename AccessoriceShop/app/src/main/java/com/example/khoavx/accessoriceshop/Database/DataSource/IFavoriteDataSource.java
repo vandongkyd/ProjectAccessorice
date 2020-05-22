@@ -6,9 +6,6 @@ import java.util.List;
 
 import io.reactivex.Flowable;
 
-/**
- * Created by vandongluong on 10/20/18.
- */
 
 public interface IFavoriteDataSource {
     Flowable<List<Favorite>> getFavoriteItems();

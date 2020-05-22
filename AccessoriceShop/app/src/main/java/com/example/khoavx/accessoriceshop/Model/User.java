@@ -1,8 +1,5 @@
 package com.example.khoavx.accessoriceshop.Model;
 
-/**
- * Created by vandongluong on 10/18/18.
- */
 
 public class User {
     private String phone;

@@ -72,26 +72,18 @@ public class MainActivity extends AppCompatActivity {
     ButtonBarLayout btn_back;
 
     TabHost tabHost;
-
-    String UserName;
-    String PassWord;
-    String Email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         iCallShopAPI = Common.callAPI();
-
-
         host.setup();
-
         //Tab 1
         TabHost.TabSpec spec = host.newTabSpec("Sign In");
         spec.setContent(R.id.tab1);
         spec.setIndicator("Sign In");
         host.addTab(spec);
-
         //Tab 2
         spec = host.newTabSpec("Sign Up");
         spec.setContent(R.id.tab2);
@@ -165,19 +157,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        btn_contiune.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startLoginFB(LoginType.PHONE);
-
-            }
-        });
-
     }
 
     private void doCheck(String email, String username, String password) {
-
         android.app.AlertDialog alertDialog = new SpotsDialog.Builder().setContext(MainActivity.this).build();
         alertDialog.show();
         alertDialog.setMessage("Plaese wating ...");
@@ -190,40 +172,16 @@ public class MainActivity extends AppCompatActivity {
                             alertDialog.dismiss();
                             Toast.makeText(MainActivity.this, "Username or email exist", Toast.LENGTH_SHORT).show();
                         } else {
-                            UserName = username;
-                            PassWord = password;
-                            Email = email;
-                            startLoginFB(LoginType.PHONE);
+                            Common.UserName = username;
+                            Common.PassWord = password;
+                            Common.Email = email;
+                            startActivity(new Intent(MainActivity.this, VerifyPhoneActivity.class));
                         }
                     }
 
                     @Override
                     public void onFailure(Call<CheckUserResponse> call, Throwable t) {
 
-                    }
-                });
-    }
-
-    private void doRegister(String email, String username, String password, String phone) {
-        final android.app.AlertDialog watingDialog = new SpotsDialog.Builder().setContext(MainActivity.this).build();
-        watingDialog.show();
-        watingDialog.setMessage("Plaese wating ...");
-
-        iCallShopAPI.register(username, password, email, phone)
-                .enqueue(new Callback<Customer>() {
-                    @Override
-                    public void onResponse(Call<Customer> call, Response<Customer> response) {
-                        watingDialog.dismiss();
-                        Customer customer = response.body();
-                        Toast.makeText(MainActivity.this, "Register successfully", Toast.LENGTH_SHORT).show();
-                        Common.currentCustomer = response.body();
-                        startActivity(new Intent(MainActivity.this, HomeActivity.class));
-                        finish();
-                    }
-
-                    @Override
-                    public void onFailure(Call<Customer> call, Throwable t) {
-                        watingDialog.dismiss();
                     }
                 });
     }
@@ -254,46 +212,9 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    private void startLoginFB(LoginType phone) {
-        Intent intent = new Intent(this, AccountKitActivity.class);
-        AccountKitConfiguration.AccountKitConfigurationBuilder configurationBuilder =
-                new AccountKitConfiguration.AccountKitConfigurationBuilder(
-                        phone,
-                        AccountKitActivity.ResponseType.TOKEN);
-        intent.putExtra(AccountKitActivity.ACCOUNT_KIT_ACTIVITY_CONFIGURATION,
-                configurationBuilder.build());
-        startActivityForResult(intent, APP_REQUEST_CODE);
-    }
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == APP_REQUEST_CODE) {
-            AccountKitLoginResult loginResult = data.getParcelableExtra(AccountKitLoginResult.RESULT_KEY);
-            if (loginResult.getError() != null) {
-                Toast.makeText(this, "" + loginResult.getError().getErrorType().getMessage(), Toast.LENGTH_SHORT).show();
-            } else if (loginResult.wasCancelled()) {
-                Toast.makeText(this, "Cancel", Toast.LENGTH_SHORT).show();
-            } else if (loginResult.getAccessToken() != null) {
-                AlertDialog alertDialog = new SpotsDialog.Builder().setContext(MainActivity.this).build();
-                alertDialog.show();
-                alertDialog.setMessage("Please waiting ...");
-
-                AccountKit.getCurrentAccount(new AccountKitCallback<Account>() {
-                    @Override
-                    public void onSuccess(final Account account) {
-                        doRegister(Email, UserName, PassWord,account.getPhoneNumber().toString());
-                        alertDialog.dismiss();
-                    }
-
-                    @Override
-                    public void onError(AccountKitError accountKitError) {
-                        Log.d("ERROR", accountKitError.getErrorType().getMessage());
-                    }
-                });
-            }
-        }
     }
 
     @Override

@@ -19,10 +19,12 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.khoavx.accessoriceshop.DiscountActivity"/>
-        <activity android:name="com.example.khoavx.accessoriceshop.HistoryActivity" />
-        <activity android:name="com.example.khoavx.accessoriceshop.CategoryActivity" />
-        <activity android:name="com.example.khoavx.accessoriceshop.SplashActivity">
+        <activity android:name=".VerifyActivity"></activity>
+        <activity android:name=".VerifyPhoneActivity" />
+        <activity android:name=".DiscountActivity" />
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".CategoryActivity" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,20 +43,20 @@
             android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
 
         <activity android:name="com.facebook.accountkit.ui.AccountKitActivity" />
-        <activity android:name="com.example.khoavx.accessoriceshop.MainActivity" />
+        <activity android:name=".MainActivity" />
         <activity
-            android:name="com.example.khoavx.accessoriceshop.HomeActivity"
+            android:name=".HomeActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.example.khoavx.accessoriceshop.ProductActivity" />
-        <activity android:name="com.example.khoavx.accessoriceshop.CartActivity" />
-        <activity android:name="com.example.khoavx.accessoriceshop.FavoriteListActivity" />
-        <activity android:name="com.example.khoavx.accessoriceshop.SearchActivity" />
-        <activity android:name="com.example.khoavx.accessoriceshop.YourOrderActivity" />
-        <activity android:name="com.example.khoavx.accessoriceshop.OrderDetailActivity" />
-        <activity android:name="com.example.khoavx.accessoriceshop.InfoActivity" />
+        <activity android:name=".ProductActivity" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".FavoriteListActivity" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".YourOrderActivity" />
+        <activity android:name=".OrderDetailActivity" />
+        <activity android:name=".InfoActivity" />
 
-        <service android:name="com.example.khoavx.accessoriceshop.Service.MyFirebaseMessagingService">
+        <service android:name=".Service.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
@@ -72,9 +74,9 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="com.example.khoavx.accessoriceshop.NearbyStoreActivity"
+            android:name=".NearbyStoreActivity"
             android:label="@string/title_activity_nearby_store" />
-        <activity android:name="com.example.khoavx.accessoriceshop.ProductDetailActivity" />
+        <activity android:name=".ProductDetailActivity" />
     </application>
 
 </manifest>

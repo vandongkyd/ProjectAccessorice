@@ -1,8 +1,6 @@
 package com.example.khoavx.accessoriceshop.Model;
 
-/**
- * Created by vandongluong on 10/20/18.
- */
+
 
 public class Category {
     public String id ;

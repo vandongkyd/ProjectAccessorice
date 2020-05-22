@@ -125,7 +125,6 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
         ItemTouchHelper.SimpleCallback simpleCallback = new RecyclerItemTouchHelper(0, ItemTouchHelper.LEFT, this);
         new ItemTouchHelper(simpleCallback).attachToRecyclerView(rv_cart);
         loadCartItem();
-        loadToken();
 
 
         btn_place_order.setOnClickListener(new View.OnClickListener() {

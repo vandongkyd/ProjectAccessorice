@@ -5,9 +5,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-/**
- * Created by vandongluong on 10/20/18.
- */
+
 @Entity(tableName = "Cart")
 public class Cart {
 

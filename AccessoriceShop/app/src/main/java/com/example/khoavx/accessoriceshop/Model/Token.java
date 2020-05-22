@@ -1,8 +1,5 @@
 package com.example.khoavx.accessoriceshop.Model;
 
-/**
- * Created by vandongluong on 10/29/18.
- */
 
 public class Token {
     private String Phone;

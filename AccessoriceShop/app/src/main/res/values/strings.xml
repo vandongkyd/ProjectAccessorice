@@ -12,4 +12,9 @@
     <string name="plase_order">Plase Order</string>
     <string name="title_activity_nearby_store">Map</string>
 
+    <string name="phone_number">Phone Number</string>
+    <string name="generate_otp">Generate OTP</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="verify_sign_in">Verify and Sign In</string>
+
 </resources>

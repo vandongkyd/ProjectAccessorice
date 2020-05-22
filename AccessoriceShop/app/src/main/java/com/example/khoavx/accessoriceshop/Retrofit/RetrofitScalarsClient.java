@@ -3,9 +3,6 @@ package com.example.khoavx.accessoriceshop.Retrofit;
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
-/**
- * Created by vandongluong on 10/18/18.
- */
 
 public class RetrofitScalarsClient {
     private static Retrofit retrofit = null;

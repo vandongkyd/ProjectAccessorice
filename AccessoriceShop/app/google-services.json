@@ -1,39 +1,45 @@
 {
   "project_info": {
-    "project_number": "834547049714",
-    "firebase_url": "https://drinkshop-13770.firebaseio.com",
-    "project_id": "drinkshop-13770",
-    "storage_bucket": "drinkshop-13770.appspot.com"
+    "project_number": "674311445988",
+    "firebase_url": "https://accessories-4bd29.firebaseio.com",
+    "project_id": "accessories-4bd29",
+    "storage_bucket": "accessories-4bd29.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:834547049714:android:d510c89eb2866b39",
+        "mobilesdk_app_id": "1:674311445988:android:d826defb8bf8d0e89e3bf1",
         "android_client_info": {
-          "package_name": "com.example.vantran.drinkshop"
+          "package_name": "com.example.khoavx.accessoriceshop"
         }
       },
       "oauth_client": [
         {
-          "client_id": "834547049714-ntkuagfq8hh1813rvoof418edgp454ph.apps.googleusercontent.com",
+          "client_id": "674311445988-v0dsiimkq10vg56nsclbfepdl24mk9ki.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.khoavx.accessoriceshop",
+            "certificate_hash": "ce2ddceb778dcac9cf3658e58284e92809bdc56c"
+          }
+        },
+        {
+          "client_id": "674311445988-vavl7j9jf8m8qojsc8ojoh4b0241qgv4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBkC9sWmk_mhP92FcM-kUYTqbR1lHJXlWU"
+          "current_key": "AIzaSyD5qgEcR9fm1mnHg6hIFVYAU8C1jKkGyzQ"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
+          "other_platform_oauth_client": [
+            {
+              "client_id": "674311445988-vavl7j9jf8m8qojsc8ojoh4b0241qgv4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

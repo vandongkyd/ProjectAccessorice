@@ -149,7 +149,7 @@ public class ProductActivity extends AppCompatActivity {
     }
 
     private void updateCartCount() {
-        if (cart_badge == null)return;
+        if (cart_badge == null) return;
         runOnUiThread(new Runnable() {
             @Override
             public void run() {

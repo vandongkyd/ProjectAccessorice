@@ -2,9 +2,6 @@ package com.example.khoavx.accessoriceshop.Model;
 
 import java.util.Map;
 
-/**
- * Created by vandongluong on 10/29/18.
- */
 
 public class DataMessage {
     public String to;

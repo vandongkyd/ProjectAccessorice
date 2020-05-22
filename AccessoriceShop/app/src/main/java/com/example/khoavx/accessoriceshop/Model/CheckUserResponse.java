@@ -1,9 +1,5 @@
 package com.example.khoavx.accessoriceshop.Model;
 
-/**
- * Created by vandongluong on 10/17/18.
- */
-
 public class CheckUserResponse {
     private boolean exists;
     private String error_msg;

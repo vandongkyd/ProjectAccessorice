@@ -8,9 +8,6 @@ import android.view.View;
 import com.example.khoavx.accessoriceshop.Apdater.CartAdapter;
 import com.example.khoavx.accessoriceshop.Apdater.FavoriteAdapter;
 
-/**
- * Created by vandongluong on 10/22/18.
- */
 
 public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
 

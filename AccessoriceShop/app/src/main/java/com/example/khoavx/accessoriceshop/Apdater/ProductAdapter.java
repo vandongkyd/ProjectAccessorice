@@ -270,12 +270,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                         cartItem.amount = finalPrice;
                         cartItem.product_id = drink.getId();
                         cartItem.images = drink.getFile_name();
-
                         //Add to DB
                         Common.cartRepository.insertToCart(cartItem);
-
                         Log.d("EDMT_DEBUG", new Gson().toJson(cartItem));
-
                         Toast.makeText(context, "Save item to cart success", Toast.LENGTH_SHORT).show();
                     } else {
                         Common.PopupMessages("Cart", (AppCompatActivity) context);

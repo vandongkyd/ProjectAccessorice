@@ -5,10 +5,6 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by vandongluong on 10/29/18.
- */
-
 public class IFCMClient {
 
     private static Retrofit retrofit = null;

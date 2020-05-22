@@ -24,16 +24,14 @@ import com.example.khoavx.accessoriceshop.Retrofit.IFCMClient;
 import com.example.khoavx.accessoriceshop.Retrofit.IFCMService;
 import com.example.khoavx.accessoriceshop.Retrofit.RetrofitClient;
 import com.facebook.accountkit.AccountKit;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-/**
- * Created by vandongluong on 10/18/18.
- */
 
 public class Common {
     // url http api
@@ -49,6 +47,7 @@ public class Common {
     public static Category currentCategory = null;
     public static Product currentProduct = null;
     public static Brand currentBrand = null;
+    public static String verificationCode = null;
     public static Order currentOrder = null;
     public static Invoice currentInvoice = null;
     public static Drink currentDrink = null;
@@ -63,6 +62,9 @@ public class Common {
     public static EMDTRoomDatabase EMDTRoomDatabase;
     public static CartRepository cartRepository;
     public static FavoriteRepository favoriteRepository;
+    public static String UserName = null;
+    public static String PassWord = null;
+    public static String Email = null;
 
     public static ICallShopAPI callAPI(){
         return RetrofitClient.getClient(BASE_URL_API).create(ICallShopAPI.class);
@@ -85,12 +87,10 @@ public class Common {
         }
     }
 
-
     private static final String FCM_API = "https://fcm.googleapis.com/";
     public static IFCMService getifcmClient(){
         return IFCMClient.getClient(FCM_API).create(IFCMService.class);
     }
-
 
     public static String getDateFormat(String timeStamp){
         try{
@@ -141,6 +141,7 @@ public class Common {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 AccountKit.logOut();
+                FirebaseAuth.getInstance().signOut();
                 Intent i = new Intent(activity, MainActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 activity.startActivity(i);

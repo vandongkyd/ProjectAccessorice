@@ -2,9 +2,6 @@ package com.example.khoavx.accessoriceshop.Model;
 
 import java.util.List;
 
-/**
- * Created by vandongluong on 10/29/18.
- */
 
 public class MyResponse {
     public long multicast_id;

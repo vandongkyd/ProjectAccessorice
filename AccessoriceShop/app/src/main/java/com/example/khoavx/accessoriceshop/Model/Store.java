@@ -1,8 +1,5 @@
 package com.example.khoavx.accessoriceshop.Model;
 
-/**
- * Created by vandongluong on 10/28/18.
- */
 
 public class Store {
     private String id;

@@ -11,9 +11,6 @@ import android.os.Build;
 
 import com.example.khoavx.accessoriceshop.R;
 
-/**
- * Created by vandongluong on 10/28/18.
- */
 
 public class NotificationHelper extends ContextWrapper {
     private static final String EDMT_CHANNEL_ID = "com.example.vantran.drinkshop.DrinkShop";
