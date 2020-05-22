@@ -14,8 +14,11 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/','Shop\HomeController@index');
+//Route::get('/','Shop\HomeController@index');
 
+Route::get('/', function (){
+    return redirect()->route('dashboard');
+});
 
 Auth::routes();
 
